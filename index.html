@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>Joyeuses Fêtes! Happy Holidays</title>
+		<title>Joyeuses Fêtes! Happy Holidays from Softvoyage!</title>
 		<meta charset="utf-8">
 		<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/> -->
 
@@ -16,7 +16,7 @@
 
 <!--[if IE 8]>
 	<style>
-		#message-mct, message-ie8 {
+		#message, message-ie8 {
 		    display: all;
 		    opacity: 1;
 		    visibility: visible;
@@ -27,16 +27,6 @@
 	</head>
 
 <body onload="init()">
-
-	<p class="mainTitle" id="#mainTitle"></p>
-
-	<script>
-	var txt1 = "Joyeuses Fêtes! de";
-	var companyName = "McCarthy Tétrault";
-	var txt2 = "wish you Happy Holidays";
-	
-	document.getElementById("#mainTitle").innerHTML = txt1 + " " + companyName + " " + txt2;
-	</script> 
 
 	
 
@@ -61,7 +51,7 @@
     <div id="snow-floor" class="snow-floor"></div>
 
 	<!-- Message de Softvoyage avec logo dedans -->
-	<a href="http://www.mccarthy.ca" target="_blank"><div id="message-mct">test</div></a>
+	<a href="http://www.mccarthy.ca" target="_blank"><div id="message"></div></a>
 
 	
     <div class="sapin-container">
@@ -89,8 +79,8 @@
 
 
 
-	<!-- Boutons volume et reload -->
-	<a href="#"><div id="volumeButton" class="volumeButton"></div></a>
+	<!-- Boutons pause et reload -->
+	<a href="#"><div id="pause" class="pause"></div></a>
 	<a href="#"><div id="reload" class="reload"></div></a>
 
 <!--[if !IE 8 ]>
@@ -132,7 +122,6 @@ jQuery(document).ready(function(){
     // Si on clique sur l'etoile
     $("#star").click(function(){
 
-
     	// On fait apparaitre les lumieres dans l'arbre qui clignotent
     	glow2();
 
@@ -147,7 +136,8 @@ jQuery(document).ready(function(){
       	audioplaying = true;
 
       	// On affiche les boutons pause et reload
-      	$("#volumeButton, #reload").css({'display':'block', 'opacity':'1'})
+      	$("#pause").css({'display':'block', 'opacity':'1'})
+      	$("#reload").css({'display':'block', 'opacity':'1'})
 
 
       	// On joue la première séquence (cadeau 1 apparait)
@@ -178,12 +168,12 @@ jQuery(document).ready(function(){
     });
 
     // If we click on message softvoyage
-    $("#message-mct").click(function(){
+    $("#message").click(function(){
 
     	// STOP la musique!
       	audioElement1.pause();
       	audioplaying = false;
-      	$("#volumeButton").css('background', 'url(img/sound-off.png)');
+      	$("#pause").css('background', 'url(img/sound-off.png)');
 
         // On joue la dernière séquence (Message de bons voeux apparait et l'étoile sur le sapin)
         animation4();
@@ -191,20 +181,20 @@ jQuery(document).ready(function(){
     });
 
     // If we click sur bouton pause musique
-    $("#volumeButton").click(function(){
+    $("#pause").click(function(){
 
     	if(audioplaying == true){
     		    	
 			// STOP la musique!
       		audioElement1.pause();
       		audioplaying = false;
-      		$("#volumeButton").css('background', 'url(img/sound-off.png)');
+      		$("#pause").css('background', 'url(img/sound-off.png)');
 
     	} else {
     		// PLAY la musique!
       		audioElement1.play();
       		audioplaying = true;
-      		$("#volumeButton").css('background', 'url(img/sound-on.png)');
+      		$("#pause").css('background', 'url(img/sound-on.png)');
     	}
     });
 
@@ -278,10 +268,7 @@ jQuery(document).ready(function(){
     function animation4(){
 
     	// Faire apparaitre message de bons souhaits
-        $("#message-mct" ).css({'visibility':'visible', 'display':'block', 'opacity':'0'}).fadeTo( 500 , 1, function() {});
-
-    	// On affiche le Main Title
-        $(".mainTitle").css({'display':'block', 'opacity':'1'}).fadeTo( 500 , 1, function() {});
+        $("#message" ).css({'visibility':'visible', 'display':'block', 'opacity':'0'}).fadeTo( 500 , 1, function() {});
 
     }
 
