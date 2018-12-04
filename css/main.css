@@ -7,18 +7,6 @@ body {
     overflow: hidden;
 }
 
-.mainTitle{
-  font-family: arial, sans-serif;
-  font-size: 11pt;
-  color: white;
-  text-align: center;
-  display: none;
-}
-
-.companyName{
-  font-weight: bold;
-}
-
 #foreground{
   background-color: black;
   width: 100%;
@@ -26,8 +14,8 @@ body {
   z-index: 9;
 }
 
-/*Bouton volume*/
-#volumeButton{
+/*Bouton pause*/
+#pause{
   background: url('../img/sound-on.png');
   position: absolute;
   top: 5px;
@@ -239,11 +227,11 @@ body {
     }
 
 
-#message-mct {
+#message {
     position: absolute;
     top: 5%;
     left: 5%;
-    background: url('../img/message-softvoyage-3.png');
+    background: url('../img/message.png');
     width: 500px;
     height: 500px;
     z-index: 30;
